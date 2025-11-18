@@ -32,7 +32,18 @@ pass in proto { udp tcp } from 100.64.0.0/10 to any port domain rdr-to $dns_serv
 ```
 pfctl -f /etc/pf.conf
 ```
-6. Reload vmm, start the vm and connect to it:
+6. Enable IP Forwarding  
+   Check if it is enabled
+```
+doas sysctl net.inet.ip.forwarding
+```
+if that returns a line ending with =0, then we need to enable it
+```
+doas sysctl net.inet.ip.forwarding=1
+echo 'net.inet.ip.forwarding=1' | doas tee -a /etc/sysctl.conf
+```
+
+8. Reload vmm, start the vm and connect to it:
 ```
 vmctl reload
 vmctl start ubuntu24
