@@ -33,10 +33,10 @@ This guide assumes you have OpenBSD 7.8 installed on physical hardware.
    fi
    ```
 5. Now lets use the output from xorriso to give us the base from which we will make a shell script that we will use to create the new iso. This will take a few steps.
-   '''
+   ```
    cd ~/isos
    xorriso -indev ./ubuntu-24.04.3-live-server-amd64.iso -report_system_area cmd > myisobuilder.sh
-   '''
+   ```
 6. Edit the script and remove everything BEFORE the line that starts with -volid and replace it with:
    ```
    xorriso -indev ./ubuntu-24.04.2-live-server-amd64.iso \  
@@ -44,4 +44,8 @@ This guide assumes you have OpenBSD 7.8 installed on physical hardware.
    -map build/grub.cfg boot/grub/grub.cfg \  
    ```
    and then add " \ " at the end of each line in the file except the very last line.
-7. 
+7. Make it executable
+   ```
+   chmod +x myisobuilder.sh
+   ```
+   
