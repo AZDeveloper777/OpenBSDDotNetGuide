@@ -28,3 +28,14 @@ pass out on $ext_if from $local_net to any flags S/SA keep state
 match out on egress from 100.64.0.0/10 to any nat-to (egress)
 pass in proto { udp tcp } from 100.64.0.0/10 to any port domain rdr-to $dns_server port domain
 ```
+5. Reload pf
+```
+pfctl -f /etc/pf.conf
+```
+6. Reload vmm, start the vm and connect to it:
+```
+vmctl reload
+vmctl start ubuntu24
+vmctl console ubuntu24
+```
+If all goes well, there will be a 5 second delay and then you will see the Ubuntu live iso startup in your terminal.
