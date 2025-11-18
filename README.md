@@ -6,3 +6,7 @@ This guide will focus on:
 
 Keep in mind that while I will show you a pf.conf (firewall config) that will be functional for the purposes of this guide, you should NOT assume it is actually secure.  
 I highly recommend paying for a pentester to test the security of anything you make available via the public internet !  
+
+References:  
+https://hiddenagenda.ltd.uk/blog/ubuntu_24_04_on_openbsd_vmm/  
+https://astro-gr.org/openbsd-vm/  
