@@ -48,4 +48,10 @@ This guide assumes you have OpenBSD 7.8 installed on physical hardware.
    ```
    chmod +x myisobuilder.sh
    ```
+8. Run the script
+   ```
+   myisobuilder.sh
+   ```
+9. You should now see a file with the name ubuntu24.iso in ~/isos
+   
    
